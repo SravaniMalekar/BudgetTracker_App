@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Ninja Wonga</title>
+    <style>
+        h2,p{
+            margin: 10px 0;
+        }
+        header{
+            margin-bottom: 40px;
+        }
+        .tip .delete{
+            color:hotpink;
+            font-size:0.8em;
+        }
+    </style>
+</head>
+<body class="indigo">
+
+    <header class="indigo darken-1 section">
+        <h2 class="center white-text">Ninja Wonga</h2>
+        <p class="flow-text grey-text center text-lighten-2">Monthly money tracker for ninjas...</p>
+    </header>
+    
+    <div class="container section">
+        <div class="row">
+            <div class="col s12 m6">
+                <form class="card z-depth-0">
+                    <div class="card-content">
+                        <span class="card-title indigo-text">Add Item:</span>
+                        <div class="input-field">
+                            <input type="text" id="name">
+                            <label for="name">Item Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="cost">
+                            <label for="cost">Item Cost</label>
+                        </div>
+                        <div class="input-field center">
+                            <button class="btn-large pink white-text">ADD ITEM</button>
+                        </div>
+                        <div class="input-field center">
+                            <p class="red-text" id="error"></p>
+                        </div>
+                                
+                    </div>            
+                </form>
+            </div>
+            <div class="col s12 m5 push-m1">
+                <div class="canvas"></div>
+            </div>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyB6FGloHMA9xHUVRB471RxCjo-Ekvdbv3c",
+        authDomain: "d3-firebase-18054.firebaseapp.com",
+        projectId: "d3-firebase-18054",
+        storageBucket: "d3-firebase-18054.appspot.com",
+        messagingSenderId: "134521647349",
+        appId: "1:134521647349:web:028482a985822b1f7a15bc",
+        measurementId: "G-8RLBLFJRGE"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+ 
+    const db= firebase.firestore();
+    db.settings({ timestampsInSnapshots: true});
+    </script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js" integrity="sha512-wNH6xsp2n8CfB91nrBtfc4sfLwYPBMjSWVUwQOp60AYYXH6i8yCwuKFZ4rgK2i6pQek/b+bSyR7b01/922IBzQ==" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
